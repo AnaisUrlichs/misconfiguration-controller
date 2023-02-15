@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- misconf_v1_misconfcontroller.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

@@ -1,0 +1,31 @@
+# permissions for end users to edit misconfcontrollers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: misconfcontroller-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: controller
+    app.kubernetes.io/part-of: controller
+    app.kubernetes.io/managed-by: kustomize
+  name: misconfcontroller-editor-role
+rules:
+- apiGroups:
+  - misconf.controller.anaisurl.com
+  resources:
+  - misconfcontrollers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - misconf.controller.anaisurl.com
+  resources:
+  - misconfcontrollers/status
+  verbs:
+  - get

@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - misconf.controller.anaisurl.com
+  resources:
+  - misconfcontrollers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - misconf.controller.anaisurl.com
+  resources:
+  - misconfcontrollers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - misconf.controller.anaisurl.com
+  resources:
+  - misconfcontrollers/status
+  verbs:
+  - get
+  - patch
+  - update
